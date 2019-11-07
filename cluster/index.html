@@ -474,7 +474,7 @@ $$
 
 
 
-![output_1_1.png](https://github.com/WahyuZ98/Wahyu_Zainur.github.io/blob/master/Clustering%20K-Means/output_1_1.png?raw=true)
+![output_1_1](C:\Users\LAM\Desktop\output_1_1.png)
 
 ### K-Means dengan Tiga Cluster
 
@@ -642,84 +642,87 @@ Sebelum  masuk  proses  algoritma  K-Prototypes   tentukan  jumlah k yang  akan 
    <h4>Rumus K-Prototype</h4>
 ![1_HxkHjH647N_9wKjqUBeJiw.png](https://github.com/WahyuZ98/Wahyu_Zainur.github.io/blob/master/Rumus%20K%20Prototype/1_HxkHjH647N_9wKjqUBeJiw.png?raw=true)
 
+
 K- Prototype ini adalah Gabungan data yang ada numerik (data digit) seperti k-Means dan ada data kategorikal  dari k-Modes
 
 Di bawah ini diberikan adalah kategorisasi set data di atas dengan menggunakan algoritma k-prototype
 
-```python
-   import numpy as np
-   from kmodes.kprototypes import KPrototypes
-   import matplotlib.pyplot as plt
-   from matplotlib import style
-   style.use("ggplot")
-   colors = ['b', 'orange', 'g', 'r', 'c', 'm', 'y', 'k', 'Brown', 'ForestGreen']
-   #Data points with their publisher name,category score, category name, place name
-   syms = np.genfromtxt('travel.csv', dtype=str, delimiter=',')[:, 1]
-   X = np.genfromtxt('travel.csv', dtype=object, delimiter=',')[:, 2:]
-   X[:, 0] = X[:, 0].astype(float)
-   kproto = KPrototypes(n_clusters=15, init='Cao', verbose=2)
-   clusters = kproto.fit_predict(X, categorical=[1, 2])
-   # Print cluster centroids of the trained model.
-   print(kproto.cluster_centroids_)
-   # Print training statistics
-   print(kproto.cost_)
-   print(kproto.n_iter_)
-   for s, c in zip(syms, clusters):
-       print("Result: {}, cluster:{}".format(s, c))
-   # Plot the results
-   for i in set(kproto.labels_):
-       index = kproto.labels_ == i
-       plt.plot(X[index, 0], X[index, 1], 'o')
-       plt.suptitle('Data points categorized with category score', fontsize=18)
-       plt.xlabel('Category Score', fontsize=16)
-       plt.ylabel('Category Type', fontsize=16)
-   plt.show()
-   # Clustered result
-   fig1, ax3 = plt.subplots()
-   scatter = ax3.scatter(syms, clusters, c=clusters, s=50)
-   ax3.set_xlabel('Data points')
-   ax3.set_ylabel('Cluster')
-   plt.colorbar(scatter)
-   ax3.set_title('Data points classifed according to known centers')
-   plt.show()
-   result = zip(syms, kproto.labels_)
-   sortedR = sorted(result, key=lambda x: x[1])
-   print(sortedR)
-   ```
 
-```python
-   240,Ransika Fernando,0.59375,plant,No Data
-   240,Ransika Fernando,0.04296875,outdoor_,No Data
-   240,Ransika Fernando,0.26953125,outdoor_road,No Data
-   241,Sachini Jagodaarachchi,0.98046875,outdoor_mountain,Manigala Mountain
-   242,Chathuri Senanayake,0.96484375,outdoor_mountain,Adara Kanda
-   242,Chathuri Senanayake,0.1953125,building_,No Data
-   242,Chathuri Senanayake,0.00390625,outdoor_,No Data
-   242,Chathuri Senanayake,0.23046875,building_,Kuwait
-   242,Chathuri Senanayake,0.2578125,building_street,Kuwait
-   242,Chathuri Senanayake,0.015625,outdoor_,Kuwait
-   243,Nilantha Premakumara,0.9453125,sky_sun,No Data
-   243,Nilantha Premakumara,0.75,outdoor_mountain,No Data
-   244,Chathuri Senanayake,0.00390625,outdoor_,Trincomalee
-   244,Chathuri Senanayake,0.6328125,outdoor_oceanbeach,Trincomalee
-   245,Surangani Bandara,0.7734375,plant_tree,No Data
-   246,Hasitha Lakmal,0.4140625,people_many,No Data
-   246,Hasitha Lakmal,0.0078125,outdoor_,No Data
-   247,Pradeep Kalansooriya,0.40234375,building_,No Data
-   247,Pradeep Kalansooriya,0.0078125,outdoor_,No Data
-   248,Dilini Wijesinghe,0.07421875,outdoor_,Victoria Dam
-   248,Dilini Wijesinghe,0.0078125,others_,Victoria Dam
-   249,Chiranthi Vinghghani,0.015625,outdoor_,No Data
-   249,Chiranthi Vinghghani,0.6484375,outdoor_waterside,No Data
-   250,Janindu Praneeth Weerawarnakula,0.671875,outdoor_oceanbeach,Galle Fort
-   251,Chathurangi Shyalika,0.00390625,outdoor_,No Data
-   252,Chathurangi Shyalika,0.9296875,trans_trainstation,No Data
-   253,Surangani Bandara,0.625,outdoor_field,No Data
-   253,Surangani Bandara,0.01171875,outdoor_,No Data
-   254,Surangani Bandara,0.99609375,sky_object,No Data
-   255,Chathurangi Shyalika,0.00390625,outdoor_,No Data
-   256,Chathurangi Shyalika,0.33984375,outdoor_field,No Data
-   ```
+<div class="codehilite"><pre><span></span>   <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+   <span class="kn">from</span> <span class="nn">kmodes.kprototypes</span> <span class="kn">import</span> <span class="n">KPrototypes</span>
+   <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+   <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">style</span>
+   <span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;ggplot&quot;</span><span class="p">)</span>
+   <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">,</span> <span class="s1">&#39;ForestGreen&#39;</span><span class="p">]</span>
+   <span class="c1">#Data points with their publisher name,category score, category name, place name</span>
+   <span class="n">syms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;travel.csv&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+   <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;travel.csv&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)[:,</span> <span class="mi">2</span><span class="p">:]</span>
+   <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+   <span class="n">kproto</span> <span class="o">=</span> <span class="n">KPrototypes</span><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;Cao&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+   <span class="n">clusters</span> <span class="o">=</span> <span class="n">kproto</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">categorical</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+   <span class="c1"># Print cluster centroids of the trained model.</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">kproto</span><span class="o">.</span><span class="n">cluster_centroids_</span><span class="p">)</span>
+   <span class="c1"># Print training statistics</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">kproto</span><span class="o">.</span><span class="n">cost_</span><span class="p">)</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">kproto</span><span class="o">.</span><span class="n">n_iter_</span><span class="p">)</span>
+   <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">syms</span><span class="p">,</span> <span class="n">clusters</span><span class="p">):</span>
+       <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Result: {}, cluster:{}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="p">))</span>
+   <span class="c1"># Plot the results</span>
+   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">kproto</span><span class="o">.</span><span class="n">labels_</span><span class="p">):</span>
+       <span class="n">index</span> <span class="o">=</span> <span class="n">kproto</span><span class="o">.</span><span class="n">labels_</span> <span class="o">==</span> <span class="n">i</span>
+       <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">index</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+       <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Data points categorized with category score&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+       <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Category Score&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+       <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Category Type&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+   <span class="c1"># Clustered result</span>
+   <span class="n">fig1</span><span class="p">,</span> <span class="n">ax3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+   <span class="n">scatter</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">syms</span><span class="p">,</span> <span class="n">clusters</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">clusters</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+   <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Data points&#39;</span><span class="p">)</span>
+   <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cluster&#39;</span><span class="p">)</span>
+   <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">scatter</span><span class="p">)</span>
+   <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Data points classifed according to known centers&#39;</span><span class="p">)</span>
+   <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+   <span class="n">result</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">syms</span><span class="p">,</span> <span class="n">kproto</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+   <span class="n">sortedR</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+   <span class="k">print</span><span class="p">(</span><span class="n">sortedR</span><span class="p">)</span>
+</pre></div>
+
+
+
+
+<div class="codehilite"><pre><span></span>   <span class="mi">240</span><span class="p">,</span><span class="n">Ransika</span> <span class="n">Fernando</span><span class="p">,</span><span class="mf">0.59375</span><span class="p">,</span><span class="n">plant</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">240</span><span class="p">,</span><span class="n">Ransika</span> <span class="n">Fernando</span><span class="p">,</span><span class="mf">0.04296875</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">240</span><span class="p">,</span><span class="n">Ransika</span> <span class="n">Fernando</span><span class="p">,</span><span class="mf">0.26953125</span><span class="p">,</span><span class="n">outdoor_road</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">241</span><span class="p">,</span><span class="n">Sachini</span> <span class="n">Jagodaarachchi</span><span class="p">,</span><span class="mf">0.98046875</span><span class="p">,</span><span class="n">outdoor_mountain</span><span class="p">,</span><span class="n">Manigala</span> <span class="n">Mountain</span>
+   <span class="mi">242</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.96484375</span><span class="p">,</span><span class="n">outdoor_mountain</span><span class="p">,</span><span class="n">Adara</span> <span class="n">Kanda</span>
+   <span class="mi">242</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.1953125</span><span class="p">,</span><span class="n">building_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">242</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.00390625</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">242</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.23046875</span><span class="p">,</span><span class="n">building_</span><span class="p">,</span><span class="n">Kuwait</span>
+   <span class="mi">242</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.2578125</span><span class="p">,</span><span class="n">building_street</span><span class="p">,</span><span class="n">Kuwait</span>
+   <span class="mi">242</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.015625</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">Kuwait</span>
+   <span class="mi">243</span><span class="p">,</span><span class="n">Nilantha</span> <span class="n">Premakumara</span><span class="p">,</span><span class="mf">0.9453125</span><span class="p">,</span><span class="n">sky_sun</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">243</span><span class="p">,</span><span class="n">Nilantha</span> <span class="n">Premakumara</span><span class="p">,</span><span class="mf">0.75</span><span class="p">,</span><span class="n">outdoor_mountain</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">244</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.00390625</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">Trincomalee</span>
+   <span class="mi">244</span><span class="p">,</span><span class="n">Chathuri</span> <span class="n">Senanayake</span><span class="p">,</span><span class="mf">0.6328125</span><span class="p">,</span><span class="n">outdoor_oceanbeach</span><span class="p">,</span><span class="n">Trincomalee</span>
+   <span class="mi">245</span><span class="p">,</span><span class="n">Surangani</span> <span class="n">Bandara</span><span class="p">,</span><span class="mf">0.7734375</span><span class="p">,</span><span class="n">plant_tree</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">246</span><span class="p">,</span><span class="n">Hasitha</span> <span class="n">Lakmal</span><span class="p">,</span><span class="mf">0.4140625</span><span class="p">,</span><span class="n">people_many</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">246</span><span class="p">,</span><span class="n">Hasitha</span> <span class="n">Lakmal</span><span class="p">,</span><span class="mf">0.0078125</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">247</span><span class="p">,</span><span class="n">Pradeep</span> <span class="n">Kalansooriya</span><span class="p">,</span><span class="mf">0.40234375</span><span class="p">,</span><span class="n">building_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">247</span><span class="p">,</span><span class="n">Pradeep</span> <span class="n">Kalansooriya</span><span class="p">,</span><span class="mf">0.0078125</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">248</span><span class="p">,</span><span class="n">Dilini</span> <span class="n">Wijesinghe</span><span class="p">,</span><span class="mf">0.07421875</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">Victoria</span> <span class="n">Dam</span>
+   <span class="mi">248</span><span class="p">,</span><span class="n">Dilini</span> <span class="n">Wijesinghe</span><span class="p">,</span><span class="mf">0.0078125</span><span class="p">,</span><span class="n">others_</span><span class="p">,</span><span class="n">Victoria</span> <span class="n">Dam</span>
+   <span class="mi">249</span><span class="p">,</span><span class="n">Chiranthi</span> <span class="n">Vinghghani</span><span class="p">,</span><span class="mf">0.015625</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">249</span><span class="p">,</span><span class="n">Chiranthi</span> <span class="n">Vinghghani</span><span class="p">,</span><span class="mf">0.6484375</span><span class="p">,</span><span class="n">outdoor_waterside</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">250</span><span class="p">,</span><span class="n">Janindu</span> <span class="n">Praneeth</span> <span class="n">Weerawarnakula</span><span class="p">,</span><span class="mf">0.671875</span><span class="p">,</span><span class="n">outdoor_oceanbeach</span><span class="p">,</span><span class="n">Galle</span> <span class="n">Fort</span>
+   <span class="mi">251</span><span class="p">,</span><span class="n">Chathurangi</span> <span class="n">Shyalika</span><span class="p">,</span><span class="mf">0.00390625</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">252</span><span class="p">,</span><span class="n">Chathurangi</span> <span class="n">Shyalika</span><span class="p">,</span><span class="mf">0.9296875</span><span class="p">,</span><span class="n">trans_trainstation</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">253</span><span class="p">,</span><span class="n">Surangani</span> <span class="n">Bandara</span><span class="p">,</span><span class="mf">0.625</span><span class="p">,</span><span class="n">outdoor_field</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">253</span><span class="p">,</span><span class="n">Surangani</span> <span class="n">Bandara</span><span class="p">,</span><span class="mf">0.01171875</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">254</span><span class="p">,</span><span class="n">Surangani</span> <span class="n">Bandara</span><span class="p">,</span><span class="mf">0.99609375</span><span class="p">,</span><span class="n">sky_object</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">255</span><span class="p">,</span><span class="n">Chathurangi</span> <span class="n">Shyalika</span><span class="p">,</span><span class="mf">0.00390625</span><span class="p">,</span><span class="n">outdoor_</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+   <span class="mi">256</span><span class="p">,</span><span class="n">Chathurangi</span> <span class="n">Shyalika</span><span class="p">,</span><span class="mf">0.33984375</span><span class="p">,</span><span class="n">outdoor_field</span><span class="p">,</span><span class="n">No</span> <span class="n">Data</span>
+</pre></div>
                 
                   
                 
