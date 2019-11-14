@@ -349,15 +349,14 @@
 
 <p>Fuzzy C-Means (FCM) merupakan teknik meengelompokan data yang keberadaan data dalam suatu kelompok ditentukan oleh nilai atau derajat keanggotaan tertentu.</p>
 <p>
-
 </p>
 
 <p>berikut adalah algoritma dari FCM:</p>
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c1.jpg"></p>
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c2.jpg"></p>
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c3.jpg"></p>
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c4.jpg"></p>
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c5.jpg"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c1.jpg"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c2.jpg"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c3.jpg"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c4.jpg"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c5.jpg"></p>
 <div class="codehilite"><pre><span></span>&lt;pre&gt;
   https://docs.google.com/spreadsheets/d/1evBtIV5M6rlFC9bljB9d0laFhv3qqoo4/edit#gid=1325169538
 &lt;/pre&gt;
@@ -400,8 +399,8 @@ ax0.set_title(&#39;Test data: 200 points x3 clusters.&#39;)
 </pre></div>
 
 
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_1.png"></p>
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_2.png"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_1.png"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_2.png"></p>
 <div class="codehilite"><pre><span></span><span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">11</span><span class="p">],</span> <span class="n">fpcs</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of centers&quot;</span><span class="p">)</span>
@@ -409,7 +408,7 @@ ax0.set_title(&#39;Test data: 200 points x3 clusters.&#39;)
 </pre></div>
 
 
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_3.png"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_3.png"></p>
 <div class="codehilite"><pre><span></span><span class="n">cntr</span><span class="p">,</span> <span class="n">u_orig</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">cmeans</span><span class="p">(</span>
     <span class="n">alldata</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 
@@ -424,7 +423,7 @@ ax0.set_title(&#39;Test data: 200 points x3 clusters.&#39;)
 </pre></div>
 
 
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_4.png"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_4.png"></p>
 <div class="codehilite"><pre><span></span>newdata = np.random.uniform(0, 1, (1100, 2)) * 10
 
 u, u0, d, jm, p, fpc = fuzz.cluster.cmeans_predict(
@@ -444,7 +443,7 @@ plt.show()
 </pre></div>
 
 
-<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_5.png"></p>
+<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_5.png"></p>
                 
                   
                 
