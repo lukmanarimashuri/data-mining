@@ -352,67 +352,56 @@
 
 </p>
 
-<p>berikut adalah algoriyma dari FCM:</p>
-<div class="codehilite"><pre><span></span>img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c1.jpg
-
-img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c2.jpg
-
-img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c3.jpg
-
-img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c4.jpg
-
-img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c5.jpg
-</pre></div>
-
-
-<pre>
+<p>berikut adalah algoritma dari FCM:</p>
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c1.jpg"></p>
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c2.jpg"></p>
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c3.jpg"></p>
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c4.jpg"></p>
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/c5.jpg"></p>
+<div class="codehilite"><pre><span></span>&lt;pre&gt;
   https://docs.google.com/spreadsheets/d/1evBtIV5M6rlFC9bljB9d0laFhv3qqoo4/edit#gid=1325169538
-</pre>
+&lt;/pre&gt;
 
-<p>berikut contoh code program fuzzy C-Means:</p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">skfuzzy</span> <span class="kn">as</span> <span class="nn">fuzz</span>
+berikut contoh code program fuzzy C-Means:
 
-<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="s1">&#39;Brown&#39;</span><span class="p">,</span> <span class="s1">&#39;ForestGreen&#39;</span><span class="p">]</span>
+​```python
+from __future__ import division, print_function
+import numpy as np
+import matplotlib.pyplot as plt
+import skfuzzy as fuzz
 
-
-<span class="n">centers</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-           <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
-           <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+colors = [&#39;b&#39;, &#39;orange&#39;, &#39;g&#39;, &#39;r&#39;, &#39;c&#39;, &#39;m&#39;, &#39;y&#39;, &#39;k&#39;, &#39;Brown&#39;, &#39;ForestGreen&#39;]
 
 
-<span class="n">sigmas</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
-          <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">],</span>
-          <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">]]</span>
+centers = [[4, 2],
+           [1, 7],
+           [5, 6]]
 
 
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> 
-<span class="n">xpts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ypts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">((</span><span class="n">xmu</span><span class="p">,</span> <span class="n">ymu</span><span class="p">),</span> <span class="p">(</span><span class="n">xsigma</span><span class="p">,</span> <span class="n">ysigma</span><span class="p">))</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">)):</span>
-    <span class="n">xpts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">xpts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="o">*</span> <span class="n">xsigma</span> <span class="o">+</span> <span class="n">xmu</span><span class="p">))</span>
-    <span class="n">ypts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">ypts</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="o">*</span> <span class="n">ysigma</span> <span class="o">+</span> <span class="n">ymu</span><span class="p">))</span>
-    <span class="n">labels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">labels</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span>
+sigmas = [[0.8, 0.3],
+          [0.3, 0.5],
+          [1.1, 0.7]]
 
-<span class="n">fig0</span><span class="p">,</span> <span class="n">ax0</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">ax0</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xpts</span><span class="p">[</span><span class="n">labels</span> <span class="o">==</span> <span class="n">label</span><span class="p">],</span> <span class="n">ypts</span><span class="p">[</span><span class="n">labels</span> <span class="o">==</span> <span class="n">label</span><span class="p">],</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span>
-             <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">label</span><span class="p">])</span>
-<span class="n">ax0</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Test data: 200 points x3 clusters.&#39;</span><span class="p">)</span>
+
+np.random.seed(42) 
+xpts = np.zeros(1)
+ypts = np.zeros(1)
+labels = np.zeros(1)
+for i, ((xmu, ymu), (xsigma, ysigma)) in enumerate(zip(centers, sigmas)):
+    xpts = np.hstack((xpts, np.random.standard_normal(200) * xsigma + xmu))
+    ypts = np.hstack((ypts, np.random.standard_normal(200) * ysigma + ymu))
+    labels = np.hstack((labels, np.ones(200) * i))
+
+fig0, ax0 = plt.subplots()
+for label in range(3):
+    ax0.plot(xpts[labels == label], ypts[labels == label], &#39;.&#39;,
+             color=colors[label])
+ax0.set_title(&#39;Test data: 200 points x3 clusters.&#39;)
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_1.png
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_2.png
-</pre></div>
-
-
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_1.png"></p>
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_2.png"></p>
 <div class="codehilite"><pre><span></span><span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">11</span><span class="p">],</span> <span class="n">fpcs</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of centers&quot;</span><span class="p">)</span>
@@ -420,10 +409,7 @@ img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/mast
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_3.png
-</pre></div>
-
-
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_3.png"></p>
 <div class="codehilite"><pre><span></span><span class="n">cntr</span><span class="p">,</span> <span class="n">u_orig</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">cmeans</span><span class="p">(</span>
     <span class="n">alldata</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 
@@ -438,10 +424,7 @@ img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/mast
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_4.png
-</pre></div>
-
-
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_4.png"></p>
 <div class="codehilite"><pre><span></span>newdata = np.random.uniform(0, 1, (1100, 2)) * 10
 
 u, u0, d, jm, p, fpc = fuzz.cluster.cmeans_predict(
@@ -461,8 +444,7 @@ plt.show()
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>img src=https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_5.png
-</pre></div>
+<p><img alt src="https://github.com/lukmanarimashuri/lukmanarimashuri.github.io/blob/master/plot_cmeans_5.png"></p>
                 
                   
                 
