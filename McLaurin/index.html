@@ -13,7 +13,7 @@
         <meta name="description" content="Repository Untuk Tugas">
       
       
-        <link rel="canonical" href="https://lukmanarimashuri.github.io/fuzzy/">
+        <link rel="canonical" href="https://lukmanarimashuri.github.io/McLaurin/">
       
       
         <meta name="author" content="Lukman Ari Mashuri">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Fuzzy Clustering - (180411100074) Lukman Ari Mashuri</title>
+        <title>Deret McLaurin - (180411100074) Lukman Ari Mashuri</title>
       
     
     
@@ -140,7 +140,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Fuzzy Clustering
+                Deret McLaurin
               
             </span>
           
@@ -309,18 +309,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Fuzzy Clustering" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../fuzzy/" title="Fuzzy Clustering" class="md-nav__link">
       Fuzzy Clustering
     </a>
-    
   </li>
 
     
@@ -340,11 +333,18 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../McLaurin/" title="Deret McLaurin" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Deret McLaurin" class="md-nav__link md-nav__link--active">
       Deret McLaurin
     </a>
+    
   </li>
 
     
@@ -360,114 +360,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/lukmanarimashuri/edit/master/docs/fuzzy.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/lukmanarimashuri/edit/master/docs/McLaurin.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1>
-    Fuzzy Clustering
-</h1>
+                <h1> Deret McLaurin </h1>
 
-<h2>
-    Pengertian Fuzzy Clustering
-</h2>
-
-<p>Fuzzy C-Means (FCM) merupakan teknik meengelompokan data yang keberadaan data dalam suatu kelompok ditentukan oleh nilai atau derajat keanggotaan tertentu.</p>
-<p>
-</p>
-
-<p>berikut adalah algoritma dari FCM:</p>
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c1.jpg"></p>
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c2.jpg"></p>
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c3.jpg"></p>
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c4.jpg"></p>
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/c5.jpg"></p>
-<div class="codehilite"><pre><span></span>&lt;pre&gt;
-  https://docs.google.com/spreadsheets/d/1evBtIV5M6rlFC9bljB9d0laFhv3qqoo4/edit#gid=1325169538
-&lt;/pre&gt;
-
-berikut contoh code program fuzzy C-Means:
-
-​```python
-from __future__ import division, print_function
-import numpy as np
-import matplotlib.pyplot as plt
-import skfuzzy as fuzz
-
-colors = [&#39;b&#39;, &#39;orange&#39;, &#39;g&#39;, &#39;r&#39;, &#39;c&#39;, &#39;m&#39;, &#39;y&#39;, &#39;k&#39;, &#39;Brown&#39;, &#39;ForestGreen&#39;]
-
-
-centers = [[4, 2],
-           [1, 7],
-           [5, 6]]
-
-
-sigmas = [[0.8, 0.3],
-          [0.3, 0.5],
-          [1.1, 0.7]]
-
-
-np.random.seed(42) 
-xpts = np.zeros(1)
-ypts = np.zeros(1)
-labels = np.zeros(1)
-for i, ((xmu, ymu), (xsigma, ysigma)) in enumerate(zip(centers, sigmas)):
-    xpts = np.hstack((xpts, np.random.standard_normal(200) * xsigma + xmu))
-    ypts = np.hstack((ypts, np.random.standard_normal(200) * ysigma + ymu))
-    labels = np.hstack((labels, np.ones(200) * i))
-
-fig0, ax0 = plt.subplots()
-for label in range(3):
-    ax0.plot(xpts[labels == label], ypts[labels == label], &#39;.&#39;,
-             color=colors[label])
-ax0.set_title(&#39;Test data: 200 points x3 clusters.&#39;)
-</pre></div>
-
-
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_1.png"></p>
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_2.png"></p>
-<div class="codehilite"><pre><span></span><span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">11</span><span class="p">],</span> <span class="n">fpcs</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Number of centers&quot;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Fuzzy partition coefficient&quot;</span><span class="p">)</span>
-</pre></div>
-
-
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_3.png"></p>
-<div class="codehilite"><pre><span></span><span class="n">cntr</span><span class="p">,</span> <span class="n">u_orig</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">cmeans</span><span class="p">(</span>
-    <span class="n">alldata</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">error</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="c1"># Show 3-cluster model</span>
-<span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Trained model&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">alldata</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">u_orig</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="n">j</span><span class="p">],</span>
-             <span class="n">alldata</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">u_orig</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="n">j</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
-             <span class="n">label</span><span class="o">=</span><span class="s1">&#39;series &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">))</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-
-
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_4.png"></p>
-<div class="codehilite"><pre><span></span>newdata = np.random.uniform(0, 1, (1100, 2)) * 10
-
-u, u0, d, jm, p, fpc = fuzz.cluster.cmeans_predict(
-    newdata.T, cntr, 2, error=0.005, maxiter=1000)
-
-cluster_membership = np.argmax(u, axis=0)  
-
-fig3, ax3 = plt.subplots()
-ax3.set_title(&#39;Random points classifed according to known centers&#39;)
-for j in range(3):
-    ax3.plot(newdata[cluster_membership == j, 0],
-             newdata[cluster_membership == j, 1], &#39;o&#39;,
-             label=&#39;series &#39; + str(j))
-ax3.legend()
-
-plt.show()
-</pre></div>
-
-
-<p><img alt src="https://raw.githubusercontent.com/lukmanarimashuri/lukmanarimashuri.github.io/master/plot_cmeans_5.png"></p>
+<p>Deret McLaurin adalah suatu fungsi f(x) yang memiliki turunan f'(x),f''(x), f'''(x) dan seterusnya yang kontinu dalam interval i dengan a, x i maka untuk x disekitar a yaitu |x-a|R,f(x) dapat diexpansi kedalam deret Taylor, dalam suatu kasus tertentu jika a=0, maka disebut deret McLaurin atau sering disebut deret Taylor baku.</p>
                 
                   
                 
@@ -488,7 +386,7 @@ plt.show()
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../cluster/" title="Clustering" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../regresi_linier/" title="Regresi Linier" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -497,25 +395,11 @@ plt.show()
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Clustering
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../regresi_linier/" title="Regresi Linier" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
                 Regresi Linier
               </span>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
           </a>
+        
         
       </nav>
     </div>
