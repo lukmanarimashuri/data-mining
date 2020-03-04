@@ -2,32 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://lukmanarimashuri.github.io/</loc>
-     <lastmod>2019-11-14</lastmod>
+     <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/deskriptif/</loc>
-     <lastmod>2019-11-14</lastmod>
+     <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/missingvalue_knn/</loc>
-     <lastmod>2019-11-14</lastmod>
+     <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/decision_tree/</loc>
-     <lastmod>2019-11-14</lastmod>
+     <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/cluster/</loc>
-     <lastmod>2019-11-14</lastmod>
+     <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/fuzzy/</loc>
-     <lastmod>2019-11-14</lastmod>
+     <lastmod>2020-03-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://lukmanarimashuri.github.io/regresi_linier/</loc>
+     <lastmod>2020-03-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://lukmanarimashuri.github.io/McLaurin/</loc>
+     <lastmod>2020-03-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
