@@ -2,52 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://lukmanarimashuri.github.io/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/deskriptif/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/missingvalue_knn/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/decision_tree/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/cluster/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/fuzzy/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/regresi_linier/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/deretmclaurin/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/eliminasi_gauss/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://lukmanarimashuri.github.io/metode_romberg/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-04-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://lukmanarimashuri.github.io/richardson/</loc>
+     <lastmod>2020-04-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
